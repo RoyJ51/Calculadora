@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Web Pro</title>
+    <style>
+        body {
+            background-color: #1e1e2e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculadora {
+            background-color: #252538;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 340px;
+        }
+        .pantalla {
+            width: 100%;
+            height: 60px;
+            background-color: #11111b;
+            color: #f8f8f2;
+            border: none;
+            border-radius: 8px;
+            font-size: 2rem;
+            text-align: right;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .grid-botones {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            height: 60px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .numero { background-color: #313244; color: #cdd6f4; }
+        .numero:hover { background-color: #45475a; }
+        
+        .operador { background-color: #f38ba8; color: #11111b; }
+        .operador:hover { background-color: #f5e0dc; }
+        
+        .limpiar { background-color: #fab387; color: #11111b; }
+        .limpiar:hover { background-color: #f9e2af; }
+        
+        .accion { background-color: #a6e3a1; color: #11111b; grid-column: span 2; }
+        .accion:hover { background-color: #94e2d5; }
+    </style>
+</head>
+<body>
+
+    <div class="calculadora">
+        <form method="POST">
+            <input type="text" class="pantalla" readonly value="{{ pantalla }}">
+            
+            <div class="grid-botones">
+                <button type="submit" name="accion" value="C" class="limpiar">C</button>
+                <button type="submit" name="accion" value="(" class="operador">(</button>
+                <button type="submit" name="accion" value=")" class="operador">)</button>
+                <button type="submit" name="accion" value="/" class="operador">/</button>
+                
+                <button type="submit" name="accion" value="7" class="numero">7</button>
+                <button type="submit" name="accion" value="8" class="numero">8</button>
+                <button type="submit" name="accion" value="9" class="numero">9</button>
+                <button type="submit" name="accion" value="*" class="operador">*</button>
+                
+                <button type="submit" name="accion" value="4" class="numero">4</button>
+                <button type="submit" name="accion" value="5" class="numero">5</button>
+                <button type="submit" name="accion" value="6" class="numero">6</button>
+                <button type="submit" name="accion" value="-" class="operador">-</button>
+                
+                <button type="submit" name="accion" value="1" class="numero">1</button>
+                <button type="submit" name="accion" value="2" class="numero">2</button>
+                <button type="submit" name="accion" value="3" class="numero">3</button>
+                <button type="submit" name="accion" value="+" class="operador">+</button>
+                
+                <button type="submit" name="accion" value="0" class="numero">0</button>
+                <button type="submit" name="accion" value="." class="numero">.</button>
+                <button type="submit" name="accion" value="=" class="accion">=</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
